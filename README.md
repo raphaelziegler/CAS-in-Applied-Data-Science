@@ -1,6 +1,6 @@
 # CAS-in-Applied-Data-Science
 
-Year 2022/2023
+Y2022/2023
 
 
 ## Module 1: Data Acquisition and management
@@ -13,3 +13,13 @@ along with the understanding and application of the theoretical concepts. We lea
 from statistical analysis results.
 
 ## M3: Data analysis and machine learning
+In this module, we learnd about standard analysis techniques and how to apply state-of-the-art machine learning with Python.
+
+## Module 4: Ethics and best practices
+In this module, we reflected upon and apply best practices for data and code management, resource usage, quality assurance, open science, open access and fair principles. We learnd about and be able to discuss the ethical questions in scientific computing, and learnd to use Version Control Software with Git.
+
+## Module 5: Peer Consulting and Selected Readings
+This module comprised peer knowledge exchange groups, peer consultations and selected readings.
+
+## Module 6: Deep Learning
+In this module, we learnd performing deep learning with TensorFlow.
