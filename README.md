@@ -1,4 +1,4 @@
-# CAS-in-Applied-Data-Science
+# CAS in Applied Data Science
 
 2022/2023
 
