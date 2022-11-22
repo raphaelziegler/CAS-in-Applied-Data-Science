@@ -23,11 +23,9 @@ def versions():
     print(f"matplotlib {matplotlib.__version__}")
     print(f"sklearn {sklearn.__version__}")
     print(f"tensorflow {tf.__version__}")
-    # print(f"Pandas {pd.__version__}")
 
 
-def create_test_train_set(x: pd.DataFrame, y: pd.DataFrame,
-                          test_size: float = 0.2) -> tuple:
+def create_test_train_set(x: pd.DataFrame, y: pd.DataFrame, test_size: float = 0.2) -> tuple:
     """
     Generate the train and test sets
 
@@ -36,8 +34,7 @@ def create_test_train_set(x: pd.DataFrame, y: pd.DataFrame,
     :param test_size: Split size 20% of the total size for testing
     :return: train, test values as Dataframe
     """
-    x_train, x_test, y_train, y_test = train_test_split(x, y,
-                                                        test_size=test_size)
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=test_size)
     return x_train, x_test, y_train, y_test
 
 
@@ -46,8 +43,7 @@ class LinearModel:
     Provide all the necessary moduls to work with linear regression.
     """
 
-    def linear_model(self, x: pd.DataFrame,
-                     y: pd.DataFrame) -> LinearRegression:
+    def linear_model(self, x: pd.DataFrame, y: pd.DataFrame) -> LinearRegression:
         """
         Create the linear model object and do the fitting
 
@@ -59,8 +55,7 @@ class LinearModel:
         reg.fit(x, y)  # do the fitting
         return reg
 
-    def mse(self, x: pd.DataFrame, y: pd.DataFrame,
-            reg: LinearRegression) -> float:
+    def mse(self, x: pd.DataFrame, y: pd.DataFrame, reg: LinearRegression) -> float:
         """
         Calculate the mean squared error
 
@@ -71,8 +66,7 @@ class LinearModel:
         """
         return np.std(y - reg.predict(x))[0]
 
-    def r2(self, x: pd.DataFrame, y: pd.DataFrame,
-           reg: LinearRegression) -> float:
+    def r2(self, x: pd.DataFrame, y: pd.DataFrame, reg: LinearRegression) -> float:
         """
         Calculate the R-squared value
 
@@ -112,28 +106,21 @@ class NeuralNetwork:
             tf.keras.layers.Dense(1, activation=None)])
 
         # Train the model
-        # how we are going to train
-        # learning_rate: steps the model maks when it's learning?
         model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.01),
                       loss='mse',  # what loss function to use
                       metrics=[tfa.metrics.r_square.RSquare()])  # what metrics we want tu use
         # model.summary()
         return model
 
-    def fit_model(self, model,
-                  x_train: pd.DataFrame, y_train: pd.DataFrame,
-                  x_test: pd.DataFrame, y_test: pd.DataFrame,
-                  epoch: int = 256):
+    def fit_model(self, model, x_train: pd.DataFrame, y_train: pd.DataFrame,
+                  x_test: pd.DataFrame, y_test: pd.DataFrame, epoch: int = 256):
         save_path = 'save/col_{epoch}.ckpt'
-        save_callback = tf.keras.callbacks.ModelCheckpoint(filepath=save_path,
-                                                           save_weights_only=True)
+        save_callback = tf.keras.callbacks.ModelCheckpoint(filepath=save_path, save_weights_only=True)
 
         hist = model.fit(x=x_train, y=y_train,  # training data
-                         # batchsize 75 epoch with 128 samples
                          epochs=epoch, batch_size=32,
-                         validation_data=(x_test, y_test),  # validation
-                         callbacks=[
-                             save_callback])  # save values wights and bias?
+                         validation_data=(x_test, y_test),  # validation data
+                         callbacks=[save_callback])  # save values for each epoch
 
         return hist
 
@@ -164,8 +151,7 @@ if __name__ == '__main__':
     versions()
 
     # read the source file
-    raw_df = pd.read_excel("colums_list.xlsx", sheet_name="Eingabe",
-                           skiprows=17)
+    raw_df = pd.read_excel("colums_list.xlsx", sheet_name="Eingabe", skiprows=17)
     # set header names
     raw_df.columns = ["Ort", "Projektname", "Datum", "Bezeichnung",
                       "Stahlbetonstütze", "Stahlbetonverbundstütze", "rund",
