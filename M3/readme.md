@@ -2,7 +2,7 @@
 
 The task was to use two presented models with own/new data. 
 
-For this purpose I tried to predict concrete column prices, see module 1 report
+For this purpose I tried to predict concrete column prices, for more details, see the report on Module 1
 <br>
 https://github.com/raphaelziegler/CAS-in-Applied-Data-Science/tree/main/M1
 
