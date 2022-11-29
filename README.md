@@ -1,6 +1,6 @@
 # CAS in Applied Data Science
 
-2022/2023
+2022/2023 
 
 
 ## Module 1: Data Acquisition and management
