@@ -114,9 +114,23 @@ class NeuralNetwork:
 
     def fit_model(self, model, x_train: pd.DataFrame, y_train: pd.DataFrame,
                   x_test: pd.DataFrame, y_test: pd.DataFrame, epoch: int = 256):
+        """
+        Fit the neural network and output the training data for plotting
+
+        :param model: neural network model object
+        :param x_train: training data
+        :param y_train: training data
+        :param x_test: test data
+        :param y_test: test data
+        :param epoch: number of epochs
+        :return: historic model training data
+        """
+
+        # path where to save the epoch data
         save_path = 'save/col_{epoch}.ckpt'
         save_callback = tf.keras.callbacks.ModelCheckpoint(filepath=save_path, save_weights_only=True)
 
+        # fit model and save training data
         hist = model.fit(x=x_train, y=y_train,  # training data
                          epochs=epoch, batch_size=32,
                          validation_data=(x_test, y_test),  # validation data
@@ -125,25 +139,53 @@ class NeuralNetwork:
         return hist
 
     def show_learning_plots(self, hist):
+        """
+        Plot the training history
+
+        :param hist: historic training data
+        """
+        # we plot 2 plots
         fig, axs = plt.subplots(1, 2, figsize=(10, 5))
+        # plot number 0
         axs[0].plot(hist.epoch, hist.history['loss'])
         axs[0].plot(hist.epoch, hist.history['val_loss'])
         axs[0].legend(('training loss', 'validation loss'), loc='upper right')
         axs[0].set_xlabel("epochs")
 
+        # plot number 1
         axs[1].plot(hist.epoch, hist.history['r_square'])
         axs[1].plot(hist.epoch, hist.history['val_r_square'])
-        axs[1].legend(('training R2', 'validation R2'))  # , loc='upper left')
+        axs[1].legend(('training R2', 'validation R2'))
+
+        # add boundary line
         axs[1].hlines(y=0.7, xmin=hist.epoch[0], xmax=hist.epoch[-1],  color="black", linestyles="dotted")
         axs[1].fill_between(x=hist.epoch, y1=0, y2=0.7, color="papayawhip")
+
+        # set y scale to 0 to 1
         axs[1].set_ylim([0, 1])
+
+        # set label for the x axis
         axs[1].set_xlabel("epochs")
         plt.show()
 
-    def evaluate(self, x, y, model):
+    def evaluate(self, x: pd.DataFrame, y: pd.DataFrame, model):
+        """
+        Display model evaluation
+
+        :param x: test data
+        :param y: test data
+        :param model: neural network model object
+        """
         model.evaluate(x, y, verbose=2)
 
-    def predict(self, model, x):
+    def predict(self, model, x: np.array):
+        """
+        Predict the outputvalue depending on the input
+
+        :param model: neural network model
+        :param x: input data as np.array
+        :return: predicted value
+        """
         return model.predict(x)
 
 
@@ -165,7 +207,7 @@ if __name__ == '__main__':
                       "A", "V", "N/mm2", "CHF/m3", "Teuerung", "Total Preis",
                       "Bemerkungen"]
 
-    # filtr out error data
+    # filter out error data
     raw_df["Nd"] = np.where(raw_df['Nd'] > 15000, 0, raw_df["Nd"])
     raw_df["l"] = np.where(raw_df['l'] < 2.0, 0, raw_df["l"])
     df = raw_df[raw_df['Nd'] > 0]
