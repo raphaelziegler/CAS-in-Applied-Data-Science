@@ -6,6 +6,7 @@
 import os
 from PIL import Image
 import numpy as np
+from matplotlib import pyplot as plt
 
 
 def get_image_path():
@@ -75,18 +76,20 @@ def image_stuff(path, objects=[], w=200, h=200):
             # check if padding is needed
             cw = float(cw) * W
             ch = float(ch) * H
+            dw = float(dw) * W
+            dh = float(dh) * H
 
-            """
-            if int(float(dw) * W) < w:
-                width = w
-            if int(float(dh) * H) < h:
-                height = h
+
+            if dw > w:
+                width = dw
+            if dh > h:
+                height = dh
             width = max(width, height)
             height = width
             # print(width, height)
 
             # print(cw, ch)
-            """
+
 
             pl, pr, pt, pb = 0, 0, 0, 0
             if width / 2 - cw > 0:
@@ -107,6 +110,7 @@ def image_stuff(path, objects=[], w=200, h=200):
             p_img = Image.new(img.mode, (new_W, new_H), color)
             p_img.paste(img, (int(pl), int(pt)))
 
+
             # crop
             left = int(cw - width / 2)
             right = left + width
@@ -117,14 +121,23 @@ def image_stuff(path, objects=[], w=200, h=200):
 
             c_img = p_img.crop((left, top, right, bottom))
 
+
             # resize
-            r_img = c_img.resize((w, h))
+            r_img = c_img.resize((w, h))  # c_img
             img_out.append(r_img)
+
+            # img.show()
+            # p_img.show()
+            # c_img.show()
 
     else:
         print(f"doing nothing: {path}")
 
     return img_out
+
+def arr_to_img(arr):
+    plt.imshow(arr, interpolation='nearest')
+    plt.show()
 
 
 if __name__ == '__main__':
@@ -142,11 +155,17 @@ if __name__ == '__main__':
     # i = image_stuff(rp[0], grey=False)
     # print(i)
 
-    for path in rp[54:56]:
+    for path in rp[0:5]:
         print(path)
         metadata = read_metadata_file(path)
         print(metadata)
-        p_i = image_stuff(path, metadata, 100, 100)
+        p_i = image_stuff(path, metadata, 300, 300)
+        pic_arrs = []
         for i in p_i:
-            i.show()
+            # i.show()
             # print(np.array(i))
+            pic_arrs.append(np.array(i))
+        # print(pic_arrs)
+        for pic in pic_arrs:
+            print(len(pic.shape))
+            arr_to_img(pic)
