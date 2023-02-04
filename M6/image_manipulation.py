@@ -106,10 +106,11 @@ def image_stuff(path, objects=[], w=200, h=200):
 
             # print(new_W, new_H)
 
+            """
             color = tuple(np.random.choice(range(256), size=3))
             p_img = Image.new(img.mode, (new_W, new_H), color)
             p_img.paste(img, (int(pl), int(pt)))
-
+            """
 
             # crop
             left = int(cw - width / 2)
@@ -119,7 +120,7 @@ def image_stuff(path, objects=[], w=200, h=200):
 
             # print(left, top, right, bottom)
 
-            c_img = p_img.crop((left, top, right, bottom))
+            c_img = img.crop((left, top, right, bottom))  # p_img
 
 
             # resize
@@ -155,7 +156,7 @@ if __name__ == '__main__':
     # i = image_stuff(rp[0], grey=False)
     # print(i)
 
-    for path in rp[0:5]:
+    for path in rp:
         print(path)
         metadata = read_metadata_file(path)
         print(metadata)
