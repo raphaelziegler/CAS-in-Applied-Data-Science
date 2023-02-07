@@ -135,6 +135,7 @@ def image_stuff(path, objects=[], w=200, h=200):
     else:
         print(f"doing nothing: {path}")
 
+    img_out = np.array(img_out)
     img_out = img_out.astype(np.float32)
     img_preproc = tf.keras.applications.nasnet.preprocess_input(img_out)
     
