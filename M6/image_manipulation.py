@@ -7,6 +7,7 @@ import os
 from PIL import Image
 import numpy as np
 from matplotlib import pyplot as plt
+import tensorflow as tf
 
 
 def get_image_path():
@@ -134,7 +135,10 @@ def image_stuff(path, objects=[], w=200, h=200):
     else:
         print(f"doing nothing: {path}")
 
-    return img_out
+    img_out = img_out.astype(np.float32)
+    img_preproc = tf.keras.applications.nasnet.preprocess_input(img_out)
+    
+    return img_preproc
 
 def arr_to_img(arr):
     plt.imshow(arr, interpolation='nearest')
