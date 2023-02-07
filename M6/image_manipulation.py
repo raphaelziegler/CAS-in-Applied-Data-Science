@@ -135,11 +135,11 @@ def image_stuff(path, objects=[], w=200, h=200):
     else:
         print(f"doing nothing: {path}")
 
-    img_out = np.array(img_out)
-    img_out = img_out.astype(np.float32)
-    img_preproc = tf.keras.applications.nasnet.preprocess_input(img_out)
+    # img_out = np.array(img_out)
+    # img_out = img_out.astype(np.float32)
+    # img_preproc = tf.keras.applications.nasnet.preprocess_input(img_out)
     
-    return img_preproc
+    return img_out
 
 def arr_to_img(arr):
     plt.imshow(arr, interpolation='nearest')
