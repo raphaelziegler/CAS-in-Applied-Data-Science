@@ -22,4 +22,4 @@ Mentioning of significant files:
 
 
 ## Report
--Latex source files
+- Latex source files
