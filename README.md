@@ -23,3 +23,6 @@ This module comprised peer knowledge exchange groups, peer consultations and sel
 
 ## Module 6: Deep Learning
 In this module, we learnd performing deep learning with TensorFlow.
+
+## Final Report: JassBot
+Report, Jupyiter Notebooks and python files
