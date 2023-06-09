@@ -6,6 +6,7 @@ Mentioning of significant files:
 
 
 ## python
+Minimum required python version 3.10
 
 ### Easy 21
 - Easy 21 Jupyter Notebook
