@@ -21,7 +21,7 @@ Minimum required python version 3.10
 - sarsa_py: SARSA functionality
 
 - dashbord.ipynd: Jupyter Notebook to determin if we learned something (testing) - configuration made in the config.py file
-- game_engine.py: Jass game-engine (environment) for the 
+- game_engine.py: Jass game-engine (environment) for the testing
 
 
 ## Report
