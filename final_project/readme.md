@@ -16,7 +16,7 @@ Minimum required python version 3.10
 - env.py: Jass environment for interaction with the RL algorithms
 - ai_functionality.py: logic for deciding what card to play
 - function.py: functions for card encoding
-- plotting.py_ functionality for the different plots
+- plotting.py: functionality for the different plots
 - monte_carlo_control.py: Monte Carlo Control functionality
 - sarsa_py: SARSA functionality
 
