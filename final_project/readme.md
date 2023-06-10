@@ -1,4 +1,4 @@
-# Final Report: JassBot
+# Final Project: JassBot
 
 Mentioning of significant files:
 
