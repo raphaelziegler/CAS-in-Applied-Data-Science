@@ -1,0 +1,72 @@
+% Chapter Template
+
+\chapter{Preliminary Studies} % Main chapter title
+
+\label{Chapter9} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+Descriptive statistic plots are shown below.\\
+For the scatterplots, load and volume have been chosen as variables because the load is the critical
+structural variable, and volume is the product of the geometric variables.
+As there are many points in a small area, the alpha value of each point has been set to between 0.3 and 0.5\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/scatter_cs_tpyes}
+    \decoRule
+    \caption[Scatter plot column cross section types]{column cross section types}
+    \label{fig:scatter_cs_type}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/scatter_column_tpyes}
+    \decoRule
+    \caption[Scatter plot column types]{column types}
+    \label{fig:scatter_column_type}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/scatter_sb_cs_tpyes}
+    \decoRule
+    \caption[Scatter plot reinforced concrete columns by cross section type]{reinforced concrete columns by cross section type}
+    \label{fig:scatter_sb_cs_type}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/scatter_sbv_cs_tpyes}
+    \decoRule
+    \caption[Scatter plot steel/concrete composite columns by cross section type]{steel/concrete composite columns by cross section type}
+    \label{fig:scatter_sbv_cs_type}
+\end{figure}
+
+\noindent
+The first results indicate that depending on how the train/test split is done; the reliability will be achieved or not. Further investigation is needed.\\
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{Figures/LR_1}
+    \decoRule
+    \caption[Linear Regression Model, first run including train/test split]{Linear Regression Model, first run including train/test split}
+    \label{fig:lm_1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/LR_2}
+    \decoRule
+    \caption[Linear Regression Model, second run including train/test split]{Linear Regression Model, second run including train/test split}
+    \label{fig:lm_2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/LR_3}
+    \decoRule
+    \caption[Linear Regression Model, third run including train/test split]{Linear Regression Model, third run including train/test split}
+    \label{fig:lm_3}
+\end{figure}

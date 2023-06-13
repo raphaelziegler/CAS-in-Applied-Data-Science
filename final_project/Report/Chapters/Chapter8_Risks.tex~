@@ -1,0 +1,21 @@
+% Chapter Template
+
+\chapter{Risks} % Main chapter title
+
+\label{Chapter8} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+Two main risks have been identified:
+\begin{enumerate}
+    \item Data is entered into the excel file by hand. Here, there is a possibility of transcription errors. The incorrectly entered values can only be detected afterwards if they deviate to the extent that they cannot correspond to reality.
+    \item There is the risk that the column prices depend primarily on the suppliers' economic situation/plant utilization, and the suppliers' profit is not always in the same frame. Thus the prices are not or only in subordinate frames dependent on physical sizes.
+\end{enumerate}
+
+\noindent
+Input errors can be checked in Python per column (min/max values). The price margin of the supplier cannot be compensated and remains a risk.\\
+
+\noindent
+Furthermore, the current inflation due to the Covid pandemic and the war in Ukraine cannot be taken into account. Here the global inflation surcharges of the manufacturers have to be factored in, this can be done in the source excel file.

@@ -1,0 +1,15 @@
+% Chapter Template
+
+\chapter{Conclusion} % Main chapter title
+
+\label{Chapter10} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+The linear regression does not seem to achieve the desired accuracy at the moment; further refinements are to be made. The range of values of the input variables could be further restricted, which means a limitation in the application (not all ranges can be covered). This would be a feasible way and is an acceptable limitation of use.\\
+Certain input data splits have a small number of columns (e.g. steel/concrete compound columns, 135 pieces), making prediction difficult/impossible.\\
+
+\noindent
+The results of the neural network are still pending.

@@ -1,0 +1,20 @@
+% Chapter Template
+
+\chapter{Data Flow} % Main chapter title
+
+\label{Chapter6} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+After the concrete columns have been awarded by the purchasing department, we get access to the order (PDF). After that, the values are transferred to the Excel file (manually); this is done for several projects together at a time when no project work is pending.
+The updated list can be read and cleaned with Python (Jupyter Notebook). The data can now be analyzed and used for modeling and plotting. If the prediction accuracy meets the desired needs, the updated model can be used to predict column prices.\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/CAS_ADS_M1_flow_drawio}
+    \decoRule
+    \caption[Data Flow]{Data Flow}
+    \label{fig:data_flow}
+\end{figure}

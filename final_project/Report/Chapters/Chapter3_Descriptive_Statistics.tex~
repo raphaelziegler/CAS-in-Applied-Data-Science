@@ -1,0 +1,38 @@
+% Chapter Template
+
+\chapter{Data} % Main chapter title
+
+\label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+
+The data is purchased concrete columns from completed building projects. For each purchased column, there is information about the number of pieces, geometry and column load, further the unit prices, discount and transport costs. The table also contains calculated values, such as cross-sectional area, volume and more (see \ref{tab:metadata}).\\
+
+For data protection reasons, information such as location, project name and column supplier has been deleted or replaced by placeholders. \\
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=1.0\textwidth]{Figures/columns_list}
+    \decoRule
+    \caption[Columns list]{Extract from the column list file}
+    \label{fig:columns_list}
+\end{figure} 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/scatter_matrix_df}
+    \decoRule
+    \caption[Scatter matrix]{Scatter matrix cleaned dataframe}
+    \label{fig:scatter_matrix}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/histograms}
+    \decoRule
+    \caption[Histograms]{Histograms by cross-section types}
+    \label{fig:histograms}
+\end{figure}

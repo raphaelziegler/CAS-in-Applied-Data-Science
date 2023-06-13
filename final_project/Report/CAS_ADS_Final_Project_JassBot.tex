@@ -1,0 +1,312 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This template has been adapted by Thomas Höhener to fit the requirements for
+% for a PhD-Thesis at the Graduate School for Cellular and Biomedical Sciences
+% (GCB) of the University of Bern. 
+%
+% Check current guidlines on:
+% https://www.gcb.unibe.ch/phd_program/phd_thesis_defense__degree/index_eng.html
+%
+% The template is based on: 
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 2.5 (27/8/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+11pt, % The default document font size, options: 10pt, 11pt, 12pt
+oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{subcaption}
+
+\usepackage{mathpazo} % Use the Palatino font by default
+
+\usepackage[backend=biber,style=numeric,natbib=true, sorting=none]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+\addbibresource{cdr.bib} % The filename of the bibliography
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+\usepackage{svg}
+\usepackage[]{hyperref}
+\usepackage[nameinlink]{cleveref} % Easy references to Figures, Tables and sections (\cref{})
+\usepackage{pdfpages} % insert pdf documents
+\usepackage[pagestyles]{titlesec} % remove the prefix ChapterN from the chapter name and in the headers
+%\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\Huge}
+
+\usepackage{makecell}
+% \usepackage[section]{placeins}
+
+
+\newpagestyle{mystyle}
+{\sethead[\thepage][][\chaptertitle]{}{}{\thepage}}
+\pagestyle{mystyle}
+\setcounter{tocdepth}{1} % adjust depth of TOC: 0-chapter, 1-sectiom, 2-subsection
+
+% no new page for the chapters
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+\usepackage{float}
+
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	outer=2.5cm, % Inner margin
+	inner=2.5cm, % Outer margin  vorher 3.8
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	% showframe, % Uncomment to show how the type block is set on the page
+}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+% Those information will be used to generate the title page and the abstract. You can also access this information with the corresponding keyword. 
+
+% Keywords used in the template. 
+\thesistitle{JassBot
+} % Your thesis title, print it with \ttitle
+\supervisor{} % Your supervisor's name, print it with \supname. Include academic title.
+\coadvisor{} %Your co-advisors's name, print it with \coaname. Include academic title.
+\firstname{Raphael} % Your first name, print it with \fname. 
+\lastname{Ziegler} % Your last name, print it with \lname .
+\author{\fname~ \lname} % Your whole name made from your input, print it with \authorname.
+\matriculationnumber{} % Your matriculation number, print it with \matrnumber
+\degree{CAS in Applied Data Science} % Your degree name, print it with \degreename. 
+%Possible degrees at the GCB: PhD in Biochemistry and Molecular Biology, PhD in Cell Biology, PhD in Biomedical Engineering, PhD in Biomedical Sciences, PhD in Immunology, PhD in Neuroscience, Doctor of Medicine and Philosophy (MD,PhD), Doctor of Veterinary Medicine and Philosophy (DVM,PhD), Doctor of Dentistry and Philosophy (DDS,PhD), PhD in Computational Biology, 
+\institute{{}} % Your department's name and URL, print it with \instname
+\faculty{{}} % Your department's name and URL, print it with \facname. Possible faculties: Faculty of Medicine, Faculty of Science, Vetsuisse Faculty, Institute of Virology and Immunology IVI, Mittelhäusern, Institute for Research in Biomedicine IRB, Bellinzona
+\university{\href{https://www.unibe.ch/index_eng.html}{University of Bern}} % Your university's name and URL, print it with \univname. Possible Universities: University of Bern or University of Zurich (for Vetsuisse Zürich) 
+
+% The following keywords are not used in this template. But define it if you want to use it in the text. 
+%\department{{}} % Your department's name and URL, print it with \deptname
+%\group{\href{https://www.GROUP_NAME.net/}{Group name}} % Your research group's name and URL, print it with \groupname
+\subject{Project Report \\} % Your subject area, print it with \subjectname
+\keywords{CAS, ADS, 2022} % Keywords for your thesis, print it with \keywordnames
+
+
+%----------------------------------------------------------------------------------------
+%	PDF META DATA
+%----------------------------------------------------------------------------------------
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STARTS
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\begin{titlepage}
+{
+\vspace*{-3cm}
+\hfill
+\includesvg[scale= 0.7]{Extra/Logo_UniBe.svg} % University logo
+}
+ \begin{center}
+\hypersetup{hidelinks} 
+ \vspace*{.06\textheight}
+  \vspace{3.0cm}
+  {\Large Data Science Project}\\[1.0cm]
+  {\Huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+  {\Huge \bfseries Project Report}\\[1.0cm] % graduate school name
+  \Large June 15, 2023 \\[5.0cm]  % Datum 
+  \vfill
+  {\Large \authorname \\ 
+   \href{mailto:raphael.ziegler@gmail.com}{raphael.ziegler@gmail.com} \par}\vspace{0.4cm} % Author name 
+
+  % {\Large \degreename \par}
+
+
+\end{center}
+\end{titlepage}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+
+This project report presents the JassBot, a data science project focused on training an intelligent agent to play the Swiss card game Jass. The project aims to train a reinforcement learning algorithm that can learn and implement an optimal game strategy. The project uses the two-player Handjass variant and excludes elements such as Marriage and Melds for simplicity. The report explores different reinforcement learning algorithms, including Monte Carlo Control, SARSA($ \lambda $), and Value Approximation. The game environment, agents, actions, and various card encoding methods are described. The report concludes by analyzing the results obtained from different encoding approaches.
+
+While macro patterns are observed, no apparent, detailed patterns emerge. The findings indicate the potential for using reinforcement learning in developing game strategies and suggest avenues for future enhancements to the JassBot project.
+
+
+
+
+\end{abstract}
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+{
+  \hypersetup{linkcolor=black} % Make links black in table of content  
+  \tableofcontents % Prints the main table of contents
+  \newpage
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{Rzi} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+
+\input{Chapters/Chapter1_Project_Objectives} 
+\newpage
+\input{Chapters/Chapter2_Descriptive_Statistics} 
+\input{Chapters/Chapter3_Machine_Learning}
+\input{Chapters/Chapter4_Results}
+
+\include{Chapters/Chapter5_Conclusion}
+
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+%The acknowledgments and the people to thank go here, don't forget to include your project advisor\ldots
+
+I want to take this opportunity to thank everyone who accompanied me during the CAS Applied Data Science. \\
+
+\noindent
+Special thanks go to Sigve Haug and Mykhailo Vladymyrov, with whom we often had exciting conversations about all and everything and, of course, also in professional matters. \\
+
+\noindent
+Furthermore, I would like to thank all the other lecturers/referees who always actively supported us and patiently answered our questions. \\
+
+\noindent
+Another thank goes to my fellow students; seeing and exchanging ideas with them was always delightful. \\
+
+\noindent
+Last but not least, I would like to thank Matyas Amrouche for writing the article \textit{"Playing cards with Reinforcement Learning"} \cite{easy21} and providing the JupyterNotebook \cite{easy21_explanation}.
+
+
+\end{acknowledgements}
+\newpage
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\include{Appendices/AppendixA}
+\include{Appendices/AppendixB}
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+
+\renewcommand{\bibname}{Reference}
+\printbibliography[heading=bibintoc]
+\newpage
+
+
+%-----------------------------------------------------------------------------------------
+%   Liste der Figuren und Tabellen
+%-----------------------------------------------------------------------------------------
+
+{
+\hypersetup{linkcolor=black} % Make links black in table of content 
+\listoffigures % Prints the list of figures
+\listoftables % Prints the list of tables
+}
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+\textbf{ML} & Machine Learning\\
+\textbf{RL} & Reinforcement Learning\\
+\textbf{MCC} & Monte Carlo Control\\
+\textbf{SARSA} & State, Action, Revard, State', Action'  \hspace*{6cm}\\
+\textbf{VA} & Value Approximation
+
+
+\end{abbreviations}
+\newpage
+
+
+\cleardoublepage
+
+
+\end{document}  

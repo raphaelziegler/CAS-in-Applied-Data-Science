@@ -1,0 +1,68 @@
+% Chapter Template
+
+\chapter{Metadata} % Main chapter title
+
+\label{Chapter4} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+All metadata is contained in the Excel file as a value in a column or in the column's header.\\
+The table contains two different column types (see \ref{ChapterA}) and three cross-section shapes.\\
+
+\noindent
+Column types:
+\begin{enumerate}
+    \item steel/concrete composite columns: Concrete columns with steel shell and/or solid steel core. (see \ref{verbundstütze})
+    \item reinforced concrete columns: Concrete columns with reinforcement (see \ref{betonstütze})
+\end{enumerate} 
+Cross-section shapes: Round, angular and oval (Mainly used in parking garages)  \\
+
+
+\begin{longtable}[ht!]{| l | l | c |}
+ \caption{Column names and units\label{tab:metadata}}\\
+ 
+ \hline
+        \multicolumn{1}{|l}{\bfseries Column name} & \multicolumn{1}{|l}{\bfseries Description} & \multicolumn{1}{|c|}{\bfseries Unit} \\ 
+             \hline
+             %\endhead
+             Ort & Municipality of the construction side & - \\ \hline 
+             Projektname & Name of the building project & - \\ \hline
+             Datum & Date of the purchase & day.month.year \\ \hline
+             Bezeichnung & Identifier for the column on side & - \\ \hline
+             Stahlbetonstütze & Column typ (see \ref{betonstütze}) & - \\ \hline
+             Stahlbetonverbundstütze & Column typ (see \ref{verbundstütze}) & - \\ \hline
+             rund & Cross section shape & - \\ \hline
+             eckig & Cross section shape & - \\ \hline
+             oval & Cross section shape & - \\ \hline
+             Durchmesser & Cross-sectional dimension & m \\ \hline
+             a & Cross-sectional dimension & m \\ \hline
+             b & Cross-sectional dimension & m \\ \hline
+             l & Column length& m \\ \hline
+             Nd & Load & kN \\ \hline
+             Md & Bending moment & kNm \\ \hline
+             Stück & Quantity&  -\\ \hline
+             Hersteller & Manufacturer & - \\ \hline
+             intern & self purchased & - \\ \hline
+             extern & externally purchased (subcontractor) & - \\ \hline
+             intern & Manufacturing cost & CHF/piece \\ \hline
+             Rabatt inkl. Skonto & Discounts & \% \\ \hline
+             Transport & Transport costs & CHF/piece \\ \hline
+             \makecell[l]{intern inkl. Rabatt \& \\ Teuerung \& Transport }& Column costs & CHF/piece \\ \hline
+             extern & Delivery costs & CHF/piece \\ \hline
+             Rabatt inkl. Skonto & Discounts & \% \\ \hline
+             extern inkl. Rabatt \& Teuerung & Column costs & CHF/piece \\ \hline
+             A & Cross section area & m² \\ \hline
+             V & Column volume & m³ \\ \hline
+             N/mm² & Tension/Compressive stress & N/mm² \\ \hline
+             CHF/m³ & Cost per volume & CHF/m³ \\ \hline
+             \makecell[l]{Preis Total inkl. Rabatt \& \\Teuerung \& Transport}& Total column costs & CHF \\ \hline
+             Bemerkungen & Comments & - \\ \hline
+ 
+\end{longtable}
+  
+\begin{description}
+    \item[Sign rule for load and bending moment:] The column loads are mainly positive, which means the columns are subjected to a compressive force. Negative values mean the columns are subjected to a tensile force; this is very rare with concrete columns and could also indicate an input error. \\
+Concrete columns are usually modeled as pin-ended columns and do not transmit bending moments. The impact of vehicles can cause bending moments in the column, which can be taken into account here in the table; the sign is irrelevant because the change of sign changes only the bending direction. The column must be able to absorb the bending moment in all directions.
+\end{description}

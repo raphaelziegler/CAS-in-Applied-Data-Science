@@ -1,0 +1,30 @@
+% Chapter Template
+
+\chapter{Data Quality} % Main chapter title
+
+\label{Chapter5} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+
+The prediction accuracy should not fall below 70\%. Otherwise, the construction costs for the offer would fluctuate too much.
+The share of column costs in an average building project is about 5\% of the construction costs. With a prediction accuracy of 70\%, there is a cost uncertainty of 1.5\% on the total price.\\
+It should be noted that due to the use of purchase prices, we are always slightly behind the market, and the most current market conditions are not included in the table.\\
+
+\noindent
+The following procedure is planned to reach the desired accuracy:
+\begin{enumerate}
+
+    \item clean up the data (remove obvious input errors)
+    \item model test with all data
+    \item split data into column types
+    \item split data into column types and cross-section shapes
+\end{enumerate}
+
+\noindent
+If the desired accuracy cannot be achieved, it must be decided on a case-by-case basis whether the prediction accuracy is acceptable for the current construction project. 
+\begin{description}
+    \item[Example:] If the accuracy of the prediction is 60\% and we require accuracy in the final price of 1.5\%, the share of the columns in the final price must not exceed 3.75\%.
+\end{description}

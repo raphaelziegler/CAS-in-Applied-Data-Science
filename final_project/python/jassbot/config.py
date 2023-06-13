@@ -3,7 +3,7 @@
 import plotting as plot
 
 # saved data to use for the different choices for player 2
-npy_file = "data/digits1_mcc_max_Q_array_10000000_digits1.npy"
+npy_file = "data/simple_mcc_max_Q_array_100000_dummy.npy"
 # npy_file = "data/simple_mcc_max_Q_array_1000000_dummy.npy"
 csv_file = "data/mcc_optimal_policy_100.csv"
 
@@ -50,7 +50,7 @@ match p:
 # 2: digits 1
 # 3: digits 2
 # 4: simple
-m = 2
+m = 0
 
 match m:
     case 4:
@@ -148,8 +148,8 @@ match m:
 
 
 def main():
-    # plot.mcc_plot_Q(10_000_000)
-    plot.sarsa_plot_Q(1_000_000)
+    plot.mcc_plot_Q(100_000_000)
+    # plot.sarsa_plot_Q(1_000_000)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,88 @@
+% Chapter Template
+
+\chapter{Data Model} % Main chapter title
+
+\label{Chapter7} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+\subsection*{Conceptual}
+To develop a tool for easy and reliable prediction of concrete column prices to simplify estimating construction projects.
+
+\subsection*{Logical}
+Two models will be used:
+\begin{enumerate}
+    \item linear regression
+    \item neural networks
+\end{enumerate}
+
+\vspace{0.4cm}
+\noindent
+The following data frames are intended:
+\begin{table}[ht!]
+    \caption{Intended data frames}
+    \label{tab:intended_data_frames}
+
+    \begin{center}
+        \begin{tabular}{|l|l|}
+            \hline
+            \textbf{variable name} & \textbf{data frame} \\ \hline
+             raw\_df & as read by pandas from the file \\ \hline
+             df & cleaned \\ \hline
+             rund & round columns \\ \hline
+             eckig & angular columns \\ \hline
+             oval & oval columns \\ \hline
+             sbv & steel/concrete composite columns \\ \hline
+             sb & reinforced concrete columns \\ \hline
+             sbv\_rund & round steel/concrete composite columns \\ \hline
+             sbv\_eckig & angular steel/concrete composite columns \\ \hline
+             sbv\_oval & oval steel/concrete composite columns \\ \hline
+             sb\_rund & round reinforced concrete columns \\ \hline
+             sb\_eckig & reinforced concrete columns \\ \hline
+             sb\_oval & reinforced concrete columns \\ \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+It is planned to create the models for all the above data frames (expect raw\_df) to determine which data frames give the best results.\\
+\clearpage
+The following columns are considered for the analysis, as they should have the most significant impact on price. If the desired accuracy cannot be achieved, other columns/features should be considered.\\
+
+\begin{table}[ht!]
+    \caption{Considered columns/feature}
+    \label{tab:considered_feature}
+
+    \begin{center}
+        \begin{tabular}{|l|l|}
+            \hline
+            \textbf{column/feature} & \textbf{ariable name} \\ \hline
+             load & Nd \\ \hline
+             cross section area & A \\ \hline
+             column length & l \\ \hline
+             volume & V \\ \hline
+             unit price & Stückpreis \\ \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+For the neural network, a normalization of the values is performed so that the magnitude of all values is in the same range (from 0 to 1)
+
+\begin{table}[ht!]
+    \caption{Normalization of columns/feature}
+    \label{tab:normalization}
+    \begin{center}
+        \begin{tabular}{|l|l|}
+            \hline
+            \textbf{column/feature} & \textbf{adjustment} \\ \hline
+             load & Nd/10000 \\ \hline
+             cross section area & A x 10 \\ \hline
+             column length & l/10 \\ \hline
+             volume & V \\ \hline
+             unit price & Stückpreis/10000 \\ \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\subsection*{Physical}
+There are no high demands on the hardware; only the neural network training requires an apparent computational effort.

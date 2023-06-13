@@ -1,0 +1,43 @@
+% Chapter Template
+
+\chapter{Methodes} % Main chapter title
+
+\label{Chapter2} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+For this data science project, a Dell XPS 13 (see \ref{fig:hardware}) is used with Manjaro Linux operating system.\\
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/hardware}
+    \decoRule
+    \caption[Used hardware]{Used hardware}
+    \label{fig:hardware}
+\end{figure}
+
+\noindent
+The analysis software is Jupyter Notebook \cite{jupyter} with Python \cite{python}. It is planned to move the model-specific code into an extra file for a better overview in the Notebook. It is not necessary to use any online resources.\\
+
+\noindent
+The following python modules will be used:\\
+
+\begin{table}[ht!]
+    \caption{Used python modules}
+    \label{tab:python_modules}
+    \begin{center}
+        \begin{tabular}{|l|r|}
+             \hline
+             \textbf{Modul name} & \textbf{Version number} \\ \hline
+             pandas {\small \cite{pandas}} & 1.4.4 \\ \hline
+             numpy {\small \cite{numpy}} & 1.23.3 \\ \hline
+             matplotlib {\small \cite{matplotlib}} & 3.5.2 \\ \hline
+             scikit-learn {\small \cite{sklearn}} & 1.1.2 \\ \hline
+             tensorflow {\small \cite{tensorflow}} & 2.11.0-dev20220927 \\ \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\noindent
+It is intended to use the linear regression model from scikit-learn and a neural network with tensorflow for the analysis.

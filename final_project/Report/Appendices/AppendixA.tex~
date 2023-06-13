@@ -1,0 +1,12 @@
+% Chapter Template
+
+\chapter{Example Easy 21} % Main chapter title
+
+\label{Easy 21} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
+
+\section{pdf printout of the Easy21 Jupyter Notebook}
+
+
+
+
+% \includepdf[pages=-]{Extra/notebook_easy21.pdf}
