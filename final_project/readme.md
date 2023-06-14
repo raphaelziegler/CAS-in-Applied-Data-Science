@@ -1,12 +1,12 @@
 # Final Project: JassBot
 
-Mentioning of significant files:
+Mentioning of essential files:
 
 ## Report: CAS_ADS_Final_Project_JassBot.pdf
 
 
 ## python
-Minimum required python version 3.10
+Minimum required Python version 3.10
 
 ### Easy 21
 - Easy 21 Jupyter Notebook
@@ -20,7 +20,7 @@ Minimum required python version 3.10
 - monte_carlo_control.py: Monte Carlo Control functionality
 - sarsa_py: SARSA functionality
 
-- dashbord.ipynd: Jupyter Notebook to determin if we learned something (testing) - configuration made in the config.py file
+- dashbord.ipynd: Jupyter Notebook to determine if we learned something (testing) - configuration made in the config.py file
 - game_engine.py: Jass game-engine (environment) for the testing
 
 

@@ -29,3 +29,9 @@ The example of Easy 21 was not transversally for Jass, which allows more game st
     \item Who plays the first card in a round (for the first and second players, there are two different strategies to learn).
     \item Does the player have the cards to decide if he can take or leave? Only if both possibilities exist can something be learned about the game strategy (take/leave).
 \end{itemize}
+
+\vspace*{0.5cm}
+
+\noindent
+The example shown in Figure \ref{fig:mcc100} with 100 million episodes suggests that we have been working with too few episodes. The illustrated case with the card encoding card strength is unsuitable with the current environment for the independent test since as several cards, can have the same value. \\
+If the project is pursued further, either optimization must be found in the current Python code to speed up the execution time or more powerful hardware is needed. 

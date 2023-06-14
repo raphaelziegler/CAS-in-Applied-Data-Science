@@ -78,7 +78,7 @@
         \label{fig:mcc digits1}
     \end{subfigure}
     \begin{subfigure}{0.5\textwidth}
-        \includegraphics[width=1\linewidth]{Figures/SARSA_digits1_1000000_random}
+        \includegraphics[width=1\linewidth]{Figures/SARSA_digits2_1000000_random}
         \caption[SARSA digits2]{SARSA digits2}
         \label{fig:sarsa digits2}
     \end{subfigure} \\

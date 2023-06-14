@@ -7,7 +7,7 @@
 
 Reinforcement learning (RL) is an area of machine learning concerned with how intelligent agents ought to take actions in an environment in order to maximize the cumulative reward. Reinforcement learning is one of three basic machine learning paradigms, alongside supervised learning and unsupervised learning. \cite{rl} \\
 
-For this project, I was looking for an RL example that is well-documented so it can be customized for the project's needs.
+For this project, It was looked for an RL example that is well-documented so it can be customized for the project's needs.
 The choice fell on the article "Playing Cards with Reinforcement Learning" \cite{easy21_explanation}, which describes Reinforcement Learning and the principles behind it; also, the Jupyter Notebook is provided \cite{easy21}.
 The article uses the game Easy 21 (a variant of BlackJack) to explain the basics of reinforcement learning and three approaches for estimating the best playing strategy. \\
 
@@ -17,7 +17,7 @@ The goal of the following algorithms is to learn the Q value function. The Q val
 %	Monte Carlo Control (MCC)
 %----------------------------------------------------------------------------------------
 \section{Monte Carlo Control (MCC)}
-\textbf{Monte-Carlo} means that we are going to play game sequences (play a round of Jass). The \textbf{Control} part means that we are going to find the optimal policy (best action to pick to maximize our winning chances). After each round, the Q value gets updated. If the played game was a win (resp. loss), the values of the state-action pair should be increased (resp. decreased)
+\textbf{Monte-Carlo} means that we are going to play game sequences/episodes (play a round of Jass). The \textbf{Control} part means that we are going to find the optimal policy (best action to pick to maximize our winning chances). After each round, the Q value gets updated. If the played game was a win (resp. loss), the values of the state-action pair should be increased (resp. decreased)
 
 %----------------------------------------------------------------------------------------
 %	SARSA($ \lambda $)
@@ -84,10 +84,4 @@ Several methods have been implemented for encoding the cards/game states:
 \label{fig:encoding}
 \end{figure}
     
-% For a better representation of the encoded data in the plots, it was re-encoded with a linear approach (1 to the number of encodings).
-% This way, there are no gaps in the plots.
-
-
-
-
 

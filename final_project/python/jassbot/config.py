@@ -50,7 +50,7 @@ match p:
 # 2: digits 1
 # 3: digits 2
 # 4: simple
-m = 0
+m = 3
 
 match m:
     case 4:
@@ -148,8 +148,8 @@ match m:
 
 
 def main():
-    plot.mcc_plot_Q(100_000_000)
-    # plot.sarsa_plot_Q(1_000_000)
+    # plot.mcc_plot_Q(100_000_000)
+    plot.sarsa_plot_Q(100_000)
 
 
 if __name__ == '__main__':

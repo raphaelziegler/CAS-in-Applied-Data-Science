@@ -8,22 +8,22 @@
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-The two ML algorithms (MCC, SARSA) could not achieve any  meaningful learning success, or more precisely, the learned Q value function does only achive a 1\% better result than a randomly played card. \\
+The two ML algorithms (MCC, SARSA) could not achieve any  meaningful learning success, or more precisely, the learned Q value function does only achieve a 1\% better result than a randomly played card. \\
 
 The fact that not all possible hand variations were played through could also have contributed to the poor performance. The RL needed more opportunities to learn all the variants. \\
 
 \noindent
-The considerations to encode the game states were not fully successful.
+The considerations to encode the game states were only partially successful.
 
 \begin{itemize}
-    \item One possible reason is that "only" two actions are available (take, leave). However, it cannot be guaranteed that the action can be executed (e.g., a take action cannot have a card in hand to take the trick).
+    \item One possible reason is that "only" two actions are available (take, leave). However, the action cannot be guaranteed to be executed (e.g., a take action cannot have a card in hand to take the trick).
     \item The changing of the dealer (the winner of the last round plays the first card in the current round) leads to the fact that the actions do not reflect the actual state of the game because the player who deals can only partially judge whether an action (take/leave) is possible.
     \item If the desired action was impossible, a playable card was randomly selected. This should have been considered a learning termination (terminal).
 \end{itemize} 
 
 
 \noindent
-The example of Easy 21 was not transversally for Jass, which allows more game states. It should be possible to consider more than two game state:
+The example of Easy 21 was not transversally for Jass, which allows more game states. It should be possible to consider more than two game states:
 \begin{itemize}
     \item Consideration of trump suit
     \item Who plays the first card in a round (for the first and second players, there are two different strategies to learn).
@@ -33,5 +33,5 @@ The example of Easy 21 was not transversally for Jass, which allows more game st
 \vspace*{0.5cm}
 
 \noindent
-The example shown in Figure \ref{fig:mcc100} with 100 million episodes suggests that we have been working with too few episodes. The illustrated case with the card encoding card strength is unsuitable with the current environment for the independent test since as several cards, can have the same value. \\
+The example shown in Figure \ref{fig:mcc100} with 100 million episodes suggests we have been working with too few episodes. The illustrated case with the card encoding card strength is unsuitable with the current environment for the independent test since several cards can have the same value. \\
 If the project is pursued further, either optimization must be found in the current Python code to speed up the execution time or more powerful hardware is needed. 

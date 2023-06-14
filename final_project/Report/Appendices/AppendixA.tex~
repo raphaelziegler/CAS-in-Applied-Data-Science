@@ -1,12 +1,40 @@
 % Chapter Template
 
-\chapter{Example Easy 21} % Main chapter title
+\chapter{Github Repository} % Main chapter title
 
-\label{Easy 21} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
-
-\section{pdf printout of the Easy21 Jupyter Notebook}
+\label{Github Repository} % Change X to a consecutive number; for referencing this chapter elsewhere, use \cref{ChapterX}
 
 
+Mentioning of significant files: \\
 
+\noindent
+\textbf{{\LARGE python}} \\
 
-% \includepdf[pages=-]{Extra/notebook_easy21.pdf}
+\noindent
+For running the code the minimum required python version is 3.10 \\
+
+\noindent
+\textbf{Easy 21}
+\begin{itemize}
+    \item Easy 21 Jupyter Notebook
+\end{itemize}
+
+\noindent
+\textbf{jassbot}  
+\begin{itemize}
+    \item config.py: Configure everything in this file (different card encodings), and for ease of use, start the RL and plot the Q value function.
+    \item env.py: Jass environment for interaction with the RL algorithms
+    \item ai\_functionality.py: logic for deciding what card to play
+    \item function.py: functions for card encoding
+    \item plotting.py: functionality for the different plots
+    \item monte\_carlo\_control.py: Monte Carlo Control functionality
+    \item sarsa.py: SARSA functionality
+    \item dashbord.ipynd: Jupyter Notebook to determin if we learned something (testing) - configuration made in the config.py file
+    \item game\_engine.py: Jass game-engine (environment) for the testing
+\end{itemize}
+
+\noindent
+\textbf{Easy 21}
+\begin{itemize}
+    \item \LaTeX\ source files
+\end{itemize}
